@@ -23,10 +23,7 @@ setup(
     license='MIT',
     url='',
     install_requires=[
-        'flask==2.0.2',
-        'flask-sqlalchemy==2.5.1',
-        'flask-login==0.5.0',
-        'arrow'
+        #i dont know yet
     ],
     description='XXX Skeleton python project example.',
     long_description='Blah',

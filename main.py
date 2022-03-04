@@ -1,16 +1,6 @@
-from typing import List, Optional
+from website import create_app
 
-from fastapi import FastAPI
-from pydantic import BaseModel
+app = create_app()
 
-class Pages(BaseModel):
-    home: str 
-    login: str 
-    Logout: Optional[str] = "Logout"
-   
-
-app = FastAPI()
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+if __name__ == '_main__':
+    app.run()
