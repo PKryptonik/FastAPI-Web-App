@@ -1,6 +1,21 @@
-from routers import create_app
+from fastapi import Depends, FastAPI
 
-app = create_app()
+from .dependencies import get_query_token, get_token_header
+from .internal import admin
+from .routers import users
 
-if __name__ == '_main__':
-    app.run()
+app = FastAPI(dependencies=[Depends(get_query_token)])
+
+
+app.include_router(users.router)
+app.include_router(
+    admin.router,
+    prefix="/admin",
+    tags=["admin"],
+    dependencies=[Depends(get_token_header)],
+    responses={418: {"description": "The machine is experiencing uncertainty."}},
+)
+
+@app.get("/")
+async def root():
+    return {"message": "Activation."}

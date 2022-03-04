@@ -1,6 +1,6 @@
 *.pyc
 __pycache__
-.vscode/launch.json
+.vscode/*
 website.egg-info
 .sqlite
 .env
