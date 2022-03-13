@@ -4,4 +4,4 @@ router = APIRouter()
 
 @router.get("/notes")
 def root():
-    return {"message": "this should pull up users"}
+    return {"message": "this should pull up notes"}
