@@ -1,8 +1,10 @@
 *.pyc
 __pycache__
 .vscode/*
+.idea
 website.egg-info
 .sqlite
 .env
 
 instance/*
+/db/sql_app.sqlite
