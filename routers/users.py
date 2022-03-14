@@ -7,6 +7,6 @@ class User(BaseModel):
     user_id: int
     user_name: str
 
-@router.get("/user")
+@router.get("/users")
 def root():
-    return {"message": "this should pull up users"}
+    return {"data": User}
